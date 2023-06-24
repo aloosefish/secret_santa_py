@@ -1,3 +1,10 @@
+# TODO:
+* figure out packaging/dependencies, with Poetry
+* generate test data and write tests first? including mock sending text 
+  messages?
+* implement efficient combination algorithm
+
+
 ## Secret Santa
 
 This program assigns everyone in a contacts json file a unique Secret Santa
@@ -32,12 +39,11 @@ works' instead)_
 4) Put the participants in your Secret Santa pool into a JSON file with the
    following schema --- and upload it to jsbin.io.
 
-### Things to Configure
+### How this works
+1) JSON data is pulled from jsonbin.io
+2)
 
-* Message content
-* Date to send
 
-- `pytest run test` : test that combinations are being created correctly.
-- `pych run hoho` : create combinations and send text messages to
-  contacts
+- `pytest run test` : tests that everything works correctly
+- `python3 main.py` : runs program manually
 
