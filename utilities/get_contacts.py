@@ -2,17 +2,17 @@ import platform
 
 import requests
 
+from dotenv import dotenv_values
+
 url = None
 key = None
 
 # is this the right way to conditionally import a package?
 if platform.system() == 'Darwin':
-    from dotenv import dotenv_values
-
-    config = dotenv_values("../.env")
+    config = dotenv_values(".env")
     url = config['SECRET_SANTA_JSON_URL']
     key = config['SECRET_SANTA_JSON_API_KEY']
-    
+
 
 def get_contacts(json_url, api_key):
     headers = {
