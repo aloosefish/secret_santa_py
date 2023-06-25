@@ -1,5 +1,6 @@
 # TODO:
 * ~~figure out packaging/dependencies, with Poetry~~
+* create data structure for contacts
 * generate test data and write tests first? including mock sending text 
   messages?
 * implement efficient combination algorithm

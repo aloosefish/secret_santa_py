@@ -7,7 +7,8 @@ from dotenv import dotenv_values
 url = None
 key = None
 
-# is this the right way to conditionally import a package?
+# for running locally on a Mac, will need to update for running via Github
+# Actions
 if platform.system() == 'Darwin':
     config = dotenv_values(".env")
     url = config['SECRET_SANTA_JSON_URL']
