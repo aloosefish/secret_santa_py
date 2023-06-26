@@ -1,8 +1,7 @@
 import platform
 
+import keyring
 import requests
-
-from dotenv import dotenv_values
 
 url = None
 key = None
@@ -10,9 +9,8 @@ key = None
 # for running locally on a Mac, will need to update for running via Github
 # Actions
 if platform.system() == 'Darwin':
-    config = dotenv_values(".env")
-    url = config['SECRET_SANTA_JSON_URL']
-    key = config['SECRET_SANTA_JSON_API_KEY']
+    url = keyring.get_password('system', 'SECRET_SANTA_JSON_URL')
+    key = keyring.get_password('system', 'SECRET_SANTA_JSON_API_KEY')
 
 
 def get_contacts(json_url, api_key):
