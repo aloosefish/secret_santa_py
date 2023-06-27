@@ -1,9 +1,11 @@
 # TODO:
 * ~~figure out packaging/dependencies, with Poetry~~
-* create data structure for contacts
+* create data structure for contacts. currently, the `get_contacts.py` 
+  returns a `list[dict]`. dictionaries are immutable, so need to turn each 
+  dictionary into a `Contact` so that secret santa can be added to it.
 * generate test data and write tests first? including mock sending text 
   messages?
-* implement efficient combination algorithm
+* implement more efficient combination algorithm?
 
 
 ## Secret Santa
