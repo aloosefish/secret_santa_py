@@ -1,7 +1,11 @@
 import random
 
+from contact_types import Contact
 
-def make_combinations(list_of_contacts):
+
+# TODO: Fix this. Currently, all this code just makes everyone their own
+#  secret santa. With the correct data structure, but not the correct values
+def make_combinations(list_of_contacts: list[Contact]):
     combos = []
     selected = []
     for c in list_of_contacts:
@@ -36,7 +40,7 @@ def remove_spouse(me, possible_combos):
             return possible_combos
 
 
-def inject_secret_santas(secret_santas, contacts):
+def inject_secret_santas(secret_santas, contacts) -> list[Contact]:
     contacts_copied = contacts.copy()
     for i, contents in enumerate(contacts_copied):
         contacts_copied[i]['secret_santa'] = secret_santas[i]

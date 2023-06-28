@@ -1,8 +1,8 @@
 # TODO:
 * ~~figure out packaging/dependencies, with Poetry~~
-* create data structure for contacts. currently, the `get_contacts.py` 
+* ~~create data structure for contacts. currently, the `get_contacts.py` 
   returns a `list[dict]`. dictionaries are immutable, so need to turn each 
-  dictionary into a `Contact` so that secret santa can be added to it.
+  dictionary into a `Contact` so that secret santa can be added to it.~~
 * generate test data and write tests first? including mock sending text 
   messages?
 * implement more efficient combination algorithm?
@@ -16,6 +16,7 @@ Secret Santa via text message (from "Robot Santa").
 
 ### Here are the rules:
 
+* Need at least 8 contacts
 * You cannot be your own Secret Santa.
 * Your spouse (if you have one) cannot be your Secret Santa.
 * You cannot have or be multiple people's Secret Santa.

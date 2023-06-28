@@ -1,7 +1,9 @@
 import requests
 
+from contact_types import Contact
 
-def get_contacts(json_url, api_key):
+
+def get_contacts(json_url, api_key) -> list[Contact]:
     headers = {
         'X-Master-Key': api_key
     }
