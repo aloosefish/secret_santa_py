@@ -1,56 +1,51 @@
-import math
 import random
 
 from faker import Faker
 
-from contact_types import Contact
-
 fake = Faker(locale='en_US')
 
 
-def create_test_contacts(n: int):
-    fake_contacts = []
-
-    for i in range(n):
+def make_contacts(n: int):
+    contacts = []
+    for i in range(n // 2):
         name = fake.first_name()
         phone_number = fake.phone_number()
-        contact = {'name': name, 'phone_number': phone_number}
-        fake_contacts.append(contact)
+        spouse = fake.first_name()
+        contact = {'name': name, 'phone_number': phone_number, 'spouse':
+            spouse}
 
-    return fake_contacts
-
-
-# TODO: Fix this: Currently not quite right. Spouse assignment is being
-#  made, kind of. Spouses need to be reciprocal. Also, resulting output is
-#  list[
-#  list[dict]] -- one too many
-#  dimension
-#  of list. And spouse is
-# add spouses to some of the contacts
-def add_spouses(list_of_test_contacts):
-    no_spouse: int
-    if len(list_of_test_contacts) % 2 == 0:
-        no_spouse = 2
-    else:
-        no_spouse = 3
-
-    contacts_with_spouses = random.sample(list_of_test_contacts,
-                                          len(list_of_test_contacts)
-                                          - no_spouse)
-
-    contacts_without_spouses = [x for x in list_of_test_contacts +
-                                contacts_with_spouses if
-                                x not in contacts_with_spouses]
-
-    for index, contact in enumerate(contacts_with_spouses):
-        # spouse from random choice of not index.
-        without_index = contacts_with_spouses[index:]
-        spouse = random.choice(without_index)
-        contacts_with_spouses[index]['spouse'] = spouse
-
-    return [contacts_with_spouses, contacts_without_spouses]
+        contacts.append(contact)
+    return contacts
 
 
-test_contacts = create_test_contacts(10)
-some_with_spouses = add_spouses(test_contacts)
-print(some_with_spouses)
+def match_spouses(unmatched: list):
+    fake_contacts_matching_spouse = []
+    for j in unmatched:
+        spouse_name = j['spouse']
+        spouse_phone_number = fake.phone_number()
+        spouses_spouse = j['name']
+
+        fake_contacts_matching_spouse.append(
+            {'name': spouse_name, 'phone_number':
+                spouse_phone_number, 'spouse': spouses_spouse})
+    return fake_contacts_matching_spouse + unmatched
+
+
+def make_singles(n: int):
+    singles = []
+    for single in range(n):
+        single_name = fake.first_name()
+        single_phone = fake.phone_number()
+
+        singles.append({'name': single_name, 'phone_number': single_phone,
+                        'spouse': None})
+
+    return singles
+
+
+def create_full_contact_list(size: int):
+    contacts = make_contacts(size)
+    contacts_with_spouses = match_spouses(contacts)
+    # singles = make_singles(3)
+
+    return contacts_with_spouses
