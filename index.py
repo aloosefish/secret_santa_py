@@ -1,5 +1,5 @@
-from utilities.get_contacts import get_contacts
-from utilities.make_combinations import make_combinations, inject_secret_santas
+from secret_santa_data_utilities.get_contacts import get_contacts
+from secret_santa_data_utilities.make_combinations import make_combinations, inject_secret_santas
 # from messages.message_body import create_message_body
 
 import platform

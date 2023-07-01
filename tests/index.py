@@ -1,4 +1,4 @@
-from utilities.make_combinations import inject_secret_santas, make_combinations
+from secret_santa_data_utilities.make_combinations import inject_secret_santas, make_combinations
 from tests.create_test_data import create_test_contact_list
 
 
