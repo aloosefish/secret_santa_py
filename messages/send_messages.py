@@ -1,4 +1,4 @@
-import os
+# import os
 import platform
 
 from twilio.rest import Client
@@ -22,5 +22,3 @@ def send_message(message_contents, recipient_number):
     message = client.messages.create(body=message_contents,
                                      from_=twilio_phone_number,
                                      to=recipient_number)
-
-

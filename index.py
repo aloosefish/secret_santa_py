@@ -1,5 +1,5 @@
 from secret_santa_data_utilities.get_contacts import get_contacts
-from secret_santa_data_utilities.make_combinations import make_combinations, inject_secret_santas
+from secret_santa_data_utilities.make_combinations import make_combinations
 # from messages.message_body import create_message_body
 
 import platform
@@ -21,8 +21,6 @@ def main():
     # print(f"contacts = {contacts}")
     combos = make_combinations(contacts)
     # print(f"combos = {combos}")
-    combined = inject_secret_santas(combos, contacts)
-    print(f"combined = {combined}")
     print(len(contacts) == len(combos))
     # for c in combos:
     #     body = create_message_body(c.name)
