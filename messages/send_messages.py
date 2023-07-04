@@ -1,27 +1,20 @@
-# extract all but send_messages and twilio client to separate file with
-# platform setup details a function that takes params for local and GitHub
-# Actions environments
-# import os
-import platform
-
 from twilio.rest import Client
-import keyring
-
-account_sid = None
-auth_token = None
-twilio_phone_number = None
-
-# for running locally on a Mac. Will need to update for running via GitHub
-# Actions
-if platform.system() == 'Darwin':
-    account_sid = keyring.get_password('system', 'TWILIO_ACCOUNT_SID')
-    auth_token = keyring.get_password('system', 'TWILIO_AUTH_TOKEN')
-    twilio_phone_number = keyring.get_password('system', 'TWILIO_PHONE_NUMBER')
-
-client = Client(account_sid, auth_token)
+from secret_santa_data_utilities.contact_types import Contact
+from messages.message_bodies import create_secret_santa_message
 
 
-def send_message(message_contents, recipient_number):
-    message = client.messages.create(body=message_contents,
-                                     from_=twilio_phone_number,
-                                     to=recipient_number)
+def test_send_message(message_contents, recipient_number, robot_phone_number,
+                      client: Client):
+    client.messages.create(body=message_contents,
+                           from_=robot_phone_number,
+                           to=recipient_number)
+
+
+def send_text_messages(contacts: list[Contact],
+                       robot_phone_number,
+                       twilio_client: Client):
+    for i in contacts:
+        message = create_secret_santa_message(i)
+        twilio_client.messages.create(body=message,
+                                      from_=robot_phone_number,
+                                      to=i['phone_number'])

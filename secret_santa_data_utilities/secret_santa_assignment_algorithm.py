@@ -1,9 +1,9 @@
 import random
 
-from contact_types import Contact, SecretSanta
+from secret_santa_data_utilities.contact_types import Contact, SecretSanta
 
 
-def make_combinations(list_of_contacts: list[Contact]):
+def assign_secret_santa(list_of_contacts: list[Contact]):
     selected: list[SecretSanta] = []
     secret_santas_assigned = list_of_contacts.copy()
     for i, c in enumerate(list_of_contacts):

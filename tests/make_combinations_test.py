@@ -1,8 +1,7 @@
 import pytest
 
-from secret_santa_data_utilities.make_combinations import remove_me, \
-    remove_spouse, make_combinations
-from contact_types import Contact, SecretSanta
+from secret_santa_data_utilities.secret_santa_assignment_algorithm import remove_me, \
+    remove_spouse, assign_secret_santa
 from create_test_data import create_test_contact_list
 
 
@@ -23,7 +22,7 @@ class TestCombinations:
         assert not_spouse[0] != setup_test_data[0]['spouse']
 
     def test_make_combinations(self, setup_test_data):
-        with_ss_assigned = make_combinations(setup_test_data)
+        with_ss_assigned = assign_secret_santa(setup_test_data)
         assert len(setup_test_data) == len(with_ss_assigned)
         # every combination is correct
         for i in with_ss_assigned:

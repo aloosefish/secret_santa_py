@@ -1,4 +1,4 @@
-from contact_types import Contact
+from secret_santa_data_utilities.contact_types import Contact
 from faker import Faker
 
 fake = Faker(locale='en_US')
