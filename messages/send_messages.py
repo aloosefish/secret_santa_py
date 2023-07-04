@@ -1,3 +1,6 @@
+# extract all but send_messages and twilio client to separate file with
+# platform setup details a function that takes params for local and GitHub
+# Actions environments
 # import os
 import platform
 
@@ -8,7 +11,7 @@ account_sid = None
 auth_token = None
 twilio_phone_number = None
 
-# for running locally on a Mac, will need to update for running via GitHub
+# for running locally on a Mac. Will need to update for running via GitHub
 # Actions
 if platform.system() == 'Darwin':
     account_sid = keyring.get_password('system', 'TWILIO_ACCOUNT_SID')

@@ -10,8 +10,6 @@ class TestValidateData:
         find_spouse_within = match_contacts.copy()
         for contact in match_contacts:
             spouse_to_find = contact['spouse']
-            # how to find spouse of each contact
-            # loop through copy to find spouse
             for spouse in find_spouse_within:
                 if spouse['name'] != spouse_to_find:
                     continue

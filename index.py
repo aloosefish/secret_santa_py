@@ -18,13 +18,9 @@ if platform.system() == 'Darwin':
 
 def main():
     contacts = get_contacts(url, key)
-    # print(f"contacts = {contacts}")
     combos = make_combinations(contacts)
-    # print(f"combos = {combos}")
-    print(len(contacts) == len(combos))
-    # for c in combos:
-    #     body = create_message_body(c.name)
-    #     number = c.phone_number
+    # create message body
+    # send messages
 
 
 if __name__ == '__main__':
