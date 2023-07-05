@@ -1,6 +1,7 @@
 import pytest
 
-from secret_santa_data_utilities.secret_santa_assignment_algorithm import remove_me, \
+from secret_santa_data_utilities.secret_santa_assignment_algorithm import \
+    remove_me, \
     remove_spouse, assign_secret_santa
 from create_test_data import create_test_contact_list
 
