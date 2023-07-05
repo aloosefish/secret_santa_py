@@ -4,10 +4,11 @@
   returns a `list[dict]`. dictionaries are immutable, so need to turn each 
   dictionary into a `Contact` so that secret santa can be added to it.~~
 ~~* generate test data and write tests first?~~
-* mock sending text messages
-* connect twilio
-* make way for run context to grab from env var in GitHub
-* connect GitHub Action
+* ~~connect twilio~~
+* ~~make way for run context to grab from env var in GitHub~~
+* ~~connect GitHub Action~~
+*  mock sending text messages
+* add GitHub Secrets to repository
 * switch data store to TinyDB (using [this guide](https://www.pingcap.com/blog/how-to-deploy-tidb-on-google-cloud-platform-part-1/))
 
 
