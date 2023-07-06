@@ -2,8 +2,8 @@ from twilio.rest import Client
 import argparse
 
 from messages.send_messages import send_text_messages
-from secret_santa_data_utilities.get_contacts import get_contacts
-from secret_santa_data_utilities.secret_santa_assignment_algorithm import \
+from data_utilities.get_contacts import get_contacts
+from data_utilities.assignment_algorithm import \
     assign_secret_santa
 
 parser = argparse.ArgumentParser(prog='SecretSanta',

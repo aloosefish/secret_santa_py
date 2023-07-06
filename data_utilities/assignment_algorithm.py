@@ -1,6 +1,6 @@
 import random
 
-from secret_santa_data_utilities.contact_types import Contact, SecretSanta
+from data_utilities.contact_types import Contact, SecretSanta
 
 
 def assign_secret_santa(list_of_contacts: list[Contact]):

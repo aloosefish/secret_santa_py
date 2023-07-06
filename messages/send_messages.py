@@ -1,5 +1,5 @@
 from twilio.rest import Client
-from secret_santa_data_utilities.contact_types import Contact
+from data_utilities.contact_types import Contact
 from messages.message_bodies import create_secret_santa_message
 
 

@@ -1,5 +1,3 @@
-# TODO: See if there is a way to keep this typed while making attributes
-#  accessible via dot notation -- contact.name,  contact.secret_santa
 from typing import TypedDict, Optional
 
 
