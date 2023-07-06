@@ -1,22 +1,23 @@
 # TODO:
-* ~~figure out packaging/dependencies, with Poetry~~
-* ~~create data structure for contacts. currently, the `get_contacts.py` 
-  returns a `list[dict]`. dictionaries are immutable, so need to turn each 
-  dictionary into a `Contact` so that secret santa can be added to it.~~
-~~* generate test data and write tests first?~~
-* ~~connect twilio~~
-* ~~make way for run context to grab from env var in GitHub~~
-* ~~connect GitHub Action~~
-*  mock sending text messages
-* add GitHub Secrets to repository
-* switch data store to TinyDB (using [this guide](https://www.pingcap.com/blog/how-to-deploy-tidb-on-google-cloud-platform-part-1/))
 
+* write more, better tests
+* run test automatically on every push to a PR 
+  * confirming environment setup
+* create package?
+
+# Possible Enhancements:
+
+* switch data store to TinyDB (
+  using [this guide](https://www.pingcap.com/blog/how-to-deploy-tidb-on-google-cloud-platform-part-1/))
+* make `contact_types.py` work with dot notations
+* mock sending of text messages
 
 ## Secret Santa
 
-This program assigns everyone in a contacts json file a unique Secret Santa
-then sends each contact a text message with the name and phone number of their
-Secret Santa via text message (from "Robot Santa").
+This program assigns every contact a unique Secret Santa.
+It then sends each contact a text message with the name of 
+their Secret Santa via text message (from "Robot Santa"). The program is run 
+automatically on a designated date and time.
 
 ### Here are the rules:
 
@@ -35,23 +36,10 @@ This project was built with the following tools:
 * [faker](https://faker.readthedocs.io/en/master/) for generating test data
 * [pytest](https://docs.pytest.org/) for writing and running tests
 * [GitHub Actions](https://docs.github.com/en/actions) for automatically sending
-  messages on a certain day
-
-### How to set up this project for your own use 
-_(do I really care about making this usable for others? maybe do 'how this 
-works' instead)_
-
-1) Clone this repo.
-2) Create a twilio account and purchase a phone number.
-3) Create a jsbin.io account
-4) Put the participants in your Secret Santa pool into a JSON file with the
-   following schema --- and upload it to jsbin.io.
-
-### How this works
-1) JSON data is pulled from jsonbin.io
-2)
+  messages on a certain date and time
 
 
-- `pytest run test` : tests that everything works correctly
-- `python3 main.py` : runs program manually
+- `poetry run pytest` : tests that everything works correctly, with 
+  generated fake test data
+- `poetry run python local_run.py` : runs program manually
 
