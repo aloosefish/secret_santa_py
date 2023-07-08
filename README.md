@@ -1,23 +1,19 @@
-# TODO:
+## TODO before making public repo, adding to LinkedIn Projects, etc
+* check for keys or credentials
+* add a license to repo (https://choosealicense.com/) as LICENSE file with full 
+  text 
+  of license. This might be done automatically by poetry
+* run `poetry build` (or something else) to build distribution archives
+* update `run_tests.yml` to include package?
+* get line by line test coverage. get coverage to 100%
+* add badge to repo showing 100% pytest test coverage
 
-* write more, better tests
-* run test automatically on every push to a PR 
-  * confirming environment setup
-* create package?
-
-# Possible Enhancements:
-
-* switch data store to TinyDB (
-  using [this guide](https://www.pingcap.com/blog/how-to-deploy-tidb-on-google-cloud-platform-part-1/))
-* make `contact_types.py` work with dot notations
-* mock sending of text messages
-
-## Secret Santa
+## Secret Santa py
 
 This program assigns every contact a unique Secret Santa.
 It then sends each contact a text message with the name of 
-their Secret Santa via text message (from "Robot Santa"). The program is run 
-automatically on a designated date and time.
+their Secret Santa via text message (from "Robot Santa"). The program can be 
+run automatically on a designated date and time or manually.
 
 ### Here are the rules:
 
@@ -38,8 +34,17 @@ This project was built with the following tools:
 * [GitHub Actions](https://docs.github.com/en/actions) for automatically sending
   messages on a certain date and time
 
+# Possible Future Enhancements:
 
-- `poetry run pytest` : tests that everything works correctly, with 
-  generated fake test data
-- `poetry run python local_run.py` : runs program manually
+* more efficient Secret Santa assignment algorithm
+* switch data store to TinyDB and deploy to GCP (
+  using [this guide](https://www.pingcap.com/blog/how-to-deploy-tidb-on-google-cloud-platform-part-1/))
+* a front end for uploading contacts
+* make `contact_types.py` work with dot notation
+* mock sending of text messages
+
+
+- `poetry run pytest` : Tests that Secret Santa assignment algorithm works 
+  correctly, with generated fake test data
+- `poetry run python manual_run.py` : runs program manually
 
