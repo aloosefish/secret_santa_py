@@ -1,8 +1,5 @@
 ## TODO before making public repo, adding to LinkedIn Projects, etc
-* check for keys or credentials
-* add a license to repo (https://choosealicense.com/) as LICENSE file with full 
-  text 
-  of license. This might be done automatically by poetry
+
 * run `poetry build` (or something else) to build distribution archives
 * update `run_tests.yml` to include package?
 * get line by line test coverage. get coverage to 100%

@@ -1,10 +1,10 @@
 [tool.poetry]
 name = "secret-santa-py"
-version = "0.1.0"
+version = "1.0.0"
 description = "generate secret santa combinations and anonymously send via text message"
 authors = ["Ian Davis <ian@aloosefish.com>"]
 readme = "README.md"
-packages = [{ include = "secret_santa_py" }] # this cause issue?
+packages = [{ include = "secret_santa_py" }]
 
 [tool.poetry.dependencies]
 python = "^3.11"
