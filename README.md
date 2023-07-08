@@ -2,8 +2,8 @@
 
 * run `poetry build` (or something else) to build distribution archives
 * update `run_tests.yml` to include package?
-* get line by line test coverage. get coverage to 100%
-* add badge to repo showing 100% pytest test coverage
+* get line by line test coverage. write tests to get this as high as possible
+* add badge to repo showing pytest test coverage
 
 ## Secret Santa py
 

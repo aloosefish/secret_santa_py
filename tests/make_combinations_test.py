@@ -1,6 +1,6 @@
 import pytest
 
-from data_utilities.assignment_algorithm import remove_me, \
+from src.data_utilities.assignment_algorithm import remove_me, \
     remove_spouse, assign_secret_santa
 from create_test_data import create_test_contact_list
 

@@ -1,6 +1,6 @@
 import requests
 
-from data_utilities.contact_types import Contact
+from src.data_utilities.contact_types import Contact
 
 
 def get_contacts(json_url, api_key) -> list[Contact]:

@@ -1,10 +1,10 @@
 from twilio.rest import Client
 import keyring
 
-from data_utilities.get_contacts import get_contacts
-from data_utilities.assignment_algorithm import \
+from src.data_utilities.get_contacts import get_contacts
+from src.data_utilities.assignment_algorithm import \
     assign_secret_santa
-from messages.send_messages import send_text_messages
+from src.messages.send_messages import send_text_messages
 
 # For running locally. Must run `keyring.set_password` for each of
 # these before running this.
