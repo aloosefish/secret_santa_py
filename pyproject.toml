@@ -1,20 +1,23 @@
 [tool.poetry]
-name = "secret-santa-py"
+name = "secret_santa_py"
 version = "1.0.0"
 description = "generate secret santa combinations and anonymously send via text message"
 authors = ["Ian Davis <ian@aloosefish.com>"]
 readme = "README.md"
-packages = [{ include = "secret_santa_py" }]
+packages = [{ include = "src" }]
 
 [tool.poetry.dependencies]
-python = "^3.11"
+python = "^3.8"
 requests = "^2.31.0"
 twilio = "^8.4.0"
-Faker = "^18.11.1"
 keyring = "^24.2.0"
 
 [tool.poetry.dev-dependencies]
 pytest = "^7.4.0"
+Faker = "^18.11.1"
+tox = "^4.6.4"
+coverage = "^7.2.7"
+pytest-cov = "^4.1.0"
 
 [tool.pytest.ini_options]
 pythonpath =[
@@ -27,6 +30,12 @@ addopts = [
 
 testpaths = "tests"
 
+[tool.coverage.run]
+omit = [
+  'tests/*',
+  'src/cloud_run.py',
+  'src/manual_run.py'
+]
 
 [build-system]
 requires = ["poetry-core"]

@@ -1,8 +1,5 @@
 ## TODO before making public repo, adding to LinkedIn Projects, etc
 
-* run `poetry build` (or something else) to build distribution archives
-* update `run_tests.yml` to include package?
-* get line by line test coverage. write tests to get this as high as possible
 * add badge to repo showing pytest test coverage
 
 ## Secret Santa py
@@ -40,8 +37,11 @@ This project was built with the following tools:
 * make `contact_types.py` work with dot notation
 * mock sending of text messages
 
+# How to run
 
+- `poetry build` to build distributable archives
 - `poetry run pytest` : Tests that Secret Santa assignment algorithm works 
   correctly, with generated fake test data
 - `poetry run python manual_run.py` : runs program manually
+- `poetry run pytest --cov=src --cov-report=html` get test coverage report
 
