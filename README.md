@@ -1,13 +1,13 @@
-## TODO before making public repo, adding to LinkedIn Projects, etc
-
-* add badge to repo showing pytest test coverage
-
 ## Secret Santa py
+
+[![codecov](https://codecov.io/github/aloosefish/secret_santa_py/branch/master/graph/badge.svg?token=7G5QUF6DIK)](https://codecov.io/github/aloosefish/secret_santa_py)
 
 This program assigns every contact a unique Secret Santa.
 It then sends each contact a text message with the name of 
 their Secret Santa via text message (from "Robot Santa"). The program can be 
 run automatically on a designated date and time or manually.
+
+
 
 ### Here are the rules:
 
