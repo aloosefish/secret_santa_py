@@ -1,7 +1,7 @@
 [tool.poetry]
 name = "secret_santa_py"
 version = "1.0.0"
-description = "generate secret santa combinations and anonymously send via text message"
+description = "generate secret santa combinations and send via text message"
 authors = ["Ian Davis <ian@aloosefish.com>"]
 readme = "README.md"
 packages = [{ include = "src" }]
