@@ -31,10 +31,8 @@ This project was built with the following tools:
 # Possible Future Enhancements:
 
 * more efficient Secret Santa assignment algorithm
-* switch data store to TinyDB and deploy to GCP (
-  using [this guide](https://www.pingcap.com/blog/how-to-deploy-tidb-on-google-cloud-platform-part-1/))
 * a front end for uploading contacts
-* make `contact_types.py` work with dot notation
+* make `contact_types.py` with different data types
 * mock sending of text messages
 
 # How to run
@@ -43,5 +41,5 @@ This project was built with the following tools:
 - `poetry run pytest` : Tests that Secret Santa assignment algorithm works 
   correctly, with generated fake test data
 - `poetry run python manual_run.py` : runs program manually
-- `poetry run pytest --cov=src --cov-report=html` get test coverage report
+- `poetry run pytest --cov=src --cov-report=html` generate test coverage report
 
