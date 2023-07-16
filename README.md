@@ -4,10 +4,9 @@
 
 This program assigns every contact a unique Secret Santa.
 It then sends each contact a text message with the name of 
-their Secret Santa via text message (from "Robot Santa"). The program can be 
-run automatically on a designated date and time or manually.
-
-
+their Secret Santa (from "Robot Santa"). It can be 
+run automatically on a designated date (using the included [GitHub Action](https://github.com/aloosefish/secret_santa_py/blob/1a5bcac84892bd31f78a09c14d07bac44b233fa3/.github/workflows/create_and_send_on_schedule.yml)) or 
+manually.
 
 ### Here are the rules:
 
@@ -20,26 +19,24 @@ run automatically on a designated date and time or manually.
 
 This project was built with the following tools:
 
-* [Twilio](https://www.twilio.com/) for sending text messages
+* [Twilio](https://www.twilio.com/) for sending text messages.
 * [jsonbin.io](https://jsonbin.io) for simple, private JSON storage and
-  retrieval
-* [faker](https://faker.readthedocs.io/en/master/) for generating test data
-* [pytest](https://docs.pytest.org/) for writing and running tests
-* [GitHub Actions](https://docs.github.com/en/actions) for automatically sending
-  messages on a certain date and time
+  retrieval.
+* [faker](https://faker.readthedocs.io/en/master/) for generating test data.
+* [pytest](https://docs.pytest.org/) for writing and running tests.
+* [GitHub Actions](https://docs.github.com/en/actions) for running script on 
+  a given date and time
 
-# Possible Future Enhancements:
+### Possible Future Enhancements:
 
-* more efficient Secret Santa assignment algorithm
-* a front end for uploading contacts
-* make `contact_types.py` with different data types
-* mock sending of text messages
+* Make more efficient Secret Santa assignment algorithm
+* Make `contact_types.py` dataclasses (or something else)
 
-# How to run
+### How to run
 
 - `poetry build` to build distributable archives
 - `poetry run pytest` : Tests that Secret Santa assignment algorithm works 
-  correctly, with generated fake test data
+  correctly, with fake test data
 - `poetry run python manual_run.py` : runs program manually
 - `poetry run pytest --cov=src --cov-report=html` generate test coverage report
 

@@ -2,7 +2,7 @@
 name = "secret_santa_py"
 version = "1.0.0"
 description = "generate secret santa combinations and send via text message"
-authors = ["Ian Davis <ian@aloosefish.com>"]
+authors = ["Ian Davis"]
 readme = "README.md"
 packages = [{ include = "src" }]
 
@@ -15,7 +15,6 @@ keyring = "^24.2.0"
 [tool.poetry.dev-dependencies]
 pytest = "^7.4.0"
 Faker = "^18.11.1"
-tox = "^4.6.4"
 coverage = "^7.2.7"
 pytest-cov = "^4.1.0"
 
