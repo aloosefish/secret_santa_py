@@ -877,17 +877,6 @@ files = [
 six = ">=1.5"
 
 [[package]]
-name = "pytz"
-version = "2023.3"
-description = "World timezone definitions, modern and historical"
-optional = false
-python-versions = "*"
-files = [
-    {file = "pytz-2023.3-py2.py3-none-any.whl", hash = "sha256:a151b3abb88eda1d4e34a9814df37de2a80e301e68ba0fd856fb9b46bfbbbffb"},
-    {file = "pytz-2023.3.tar.gz", hash = "sha256:1d8ce29db189191fb55338ee6d0387d82ab59f3d00eac103412d64e0ebd0c588"},
-]
-
-[[package]]
 name = "pywin32-ctypes"
 version = "0.2.2"
 description = "A (partial) reimplementation of pywin32 using ctypes/cffi"
@@ -958,20 +947,19 @@ files = [
 
 [[package]]
 name = "twilio"
-version = "8.8.0"
+version = "8.9.1"
 description = "Twilio API client and TwiML generator"
 optional = false
 python-versions = ">=3.7.0"
 files = [
-    {file = "twilio-8.8.0-py2.py3-none-any.whl", hash = "sha256:f7a4446e9a0f1ab3e4be99ebdffe114e06ad16b9bf3f7ce582d64a041a871eb4"},
-    {file = "twilio-8.8.0.tar.gz", hash = "sha256:ff36612e1139a378c05f713a4efeb09904e968641d287fbeeff2beff2d2c3624"},
+    {file = "twilio-8.9.1-py2.py3-none-any.whl", hash = "sha256:3edc0bcde7320b5ae5f516484af9092bc4df2f5a3b1d4d94a66c29310adb924c"},
+    {file = "twilio-8.9.1.tar.gz", hash = "sha256:7bca5dc476d4d15e89e41d3074f8a265bd61445d1de9e8a697ca96cd8399eda6"},
 ]
 
 [package.dependencies]
 aiohttp = ">=3.8.4"
 aiohttp-retry = ">=2.8.3"
 PyJWT = ">=2.0.0,<3.0.0"
-pytz = "*"
 requests = ">=2.0.0"
 
 [[package]]
@@ -1107,4 +1095,4 @@ testing = ["big-O", "jaraco.functools", "jaraco.itertools", "more-itertools", "p
 [metadata]
 lock-version = "2.0"
 python-versions = "^3.8"
-content-hash = "525be4ab0d931875b2992631be8475f32372b53c797ab39f16c1dfd33a23e4e6"
+content-hash = "e2d3292800222029cfeec0f2fa6d0e85c7bc08b9490f82005c7bcd0db5938181"
