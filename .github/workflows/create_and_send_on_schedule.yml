@@ -6,10 +6,10 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@3
-      - uses: actions/setup-python@4
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v4
         with:
-          python-version: '3.11'
+          python-version: "3.11"
 
       - name: Cache Poetry Install
         uses: actions/cache@v3
@@ -30,6 +30,6 @@ jobs:
           key: pydeps-${{ hashFiles('**/poetry.lock') }}
 
       - run: poetry install --no-interaction --no-root
-        if: steps.cache-deps.outputs.cache-hit != 'true
+        if: steps.cache-deps.outputs.cache-hit != true
 
       - run: poetry run python src/cloud_run.py ${{ secrets.TWILIO_ACCOUNT_SID }} ${{ secrets.TWILIO_AUTH_TOKEN }} ${{ secrets.TWILIO_PHONE_NUMBER }} ${{ secrets.JSON_DATA_URL }} ${{ secrets.JSON_DATA_KEY }}
