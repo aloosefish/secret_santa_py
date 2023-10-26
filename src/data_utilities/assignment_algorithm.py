@@ -1,10 +1,10 @@
 import random
 
-from ..data_utilities.contact_types import SecretSanta
+from ..data_utilities.contact_types import Contact, SecretSanta
 
-def assign_secret_santa(list_of_contacts):
-    selected = []
-    secret_santas_assigned = list_of_contacts[:]
+def assign_secret_santa(list_of_contacts: list[Contact]):
+    selected: list[SecretSanta] = []
+    secret_santas_assigned: list[Contact] = list_of_contacts.copy()
     for i, c in enumerate(list_of_contacts):
         not_me = remove_me(c['name'], list_of_contacts)
         not_me_or_my_spouse = remove_spouse(c, not_me)
