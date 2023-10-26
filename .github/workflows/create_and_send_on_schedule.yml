@@ -1,7 +1,7 @@
 on:
   schedule:
-    #    “At 18:45 UTC (1:05pm CST) on October 26th.”
-    - cron: "45 18 26 10 *"
+    #    “At 18:45 UTC (2:45pm CST) on October 26th.”
+    - cron: "45 19 26 10 *"
 jobs:
   build:
     runs-on: ubuntu-latest
