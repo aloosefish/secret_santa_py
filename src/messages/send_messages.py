@@ -1,6 +1,6 @@
 from twilio.rest import Client
-from src.data_utilities.contact_types import Contact
-from src.messages.message_bodies import create_secret_santa_message
+from ..data_utilities.contact_types import Contact
+from ..messages.message_bodies import create_secret_santa_message
 
 
 def test_send_message(message_contents, recipient_number, robot_phone_number,
