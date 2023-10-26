@@ -1,4 +1,4 @@
-from ..data_utilities.contact_types import Contact
+from src.data_utilities.contact_types import Contact
 
 
 def create_secret_santa_message(person: Contact):

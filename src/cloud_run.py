@@ -1,9 +1,9 @@
 from twilio.rest import Client
 import argparse
 
-from ..src.messages.send_messages import send_text_messages
-from ..src.data_utilities.get_contacts import get_contacts
-from ..src.data_utilities.assignment_algorithm import \
+from src.messages.send_messages import send_text_messages
+from src.data_utilities.get_contacts import get_contacts
+from src.data_utilities.assignment_algorithm import \
     assign_secret_santa
 
 parser = argparse.ArgumentParser(prog='SecretSanta',
