@@ -12,7 +12,7 @@ def assign_secret_santa(list_of_contacts: list[Contact]):
         choose_one = random.choice(not_selected)
 
         this_secret_santa: SecretSanta = {'name': choose_one['name'],
-                                          'phone_number': choose_one['phone']}
+                                          'phone': choose_one['phone']}
 
         secret_santas_assigned[i]['secret_santa'] = this_secret_santa
         selected.append(this_secret_santa)

@@ -7,7 +7,7 @@ fake = Faker(locale='en_US')
 def make_contacts(n: int):
     contacts: list[Contact] = []
     for i in range(n // 2):
-        contact: Contact = {'name': fake.name(), 'phone_number':
+        contact: Contact = {'name': fake.name(), 'phone':
             fake.phone_number(),
                             'spouse':
                                 fake.name(), 'secret_santa': None}
@@ -19,7 +19,7 @@ def make_contacts(n: int):
 def match_spouses(unmatched: list):
     fake_contacts_matching_spouse: list[Contact] = []
     for j in unmatched:
-        contact: Contact = {'name': j['spouse'], 'phone_number':
+        contact: Contact = {'name': j['spouse'], 'phone':
             fake.phone_number(), 'spouse': j['name'], 'secret_santa': None}
 
         fake_contacts_matching_spouse.append(contact)
@@ -30,7 +30,7 @@ def make_singles(n: int):
     singles: list[Contact] = []
     for single in range(n):
         this_contact: Contact = {'name': fake.name(),
-                                 'phone_number': fake.phone_number(),
+                                 'phone': fake.phone_number(),
                                  'spouse': None, 'secret_santa': None}
 
         singles.append(this_contact)

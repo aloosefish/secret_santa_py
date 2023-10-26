@@ -17,4 +17,4 @@ def send_text_messages(contacts: list[Contact],
         message = create_secret_santa_message(i)
         twilio_client.messages.create(body=message,
                                       from_=robot_phone_number,
-                                      to=i['phone_number'])
+                                      to=i['phone'])
