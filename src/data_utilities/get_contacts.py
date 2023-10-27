@@ -12,6 +12,6 @@ def get_contacts(json_url, api_key):
     # work with assign_secret_santa function
     records = json_response.get("record")
     contacts: list[Contact] = []
-    for i in records():
+    for i in records:
         contacts.append(i)
     return contacts
