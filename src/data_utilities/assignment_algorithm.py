@@ -2,26 +2,34 @@ import random
 
 from src.data_utilities.contact_types import Contact, SecretSanta
 
+
 def assign_secret_santa(list_of_contacts: list[Contact]):
     selected: list[SecretSanta] = []
-    secret_santas_assigned: list[Contact] = list_of_contacts.copy()
+    secret_santas_assigned: list[
+        Contact
+    ] = (
+        list_of_contacts.copy()
+    )  # issue is here -- AttributeError: 'NoneType' object has no attribute
+    # 'copy'
     for i, c in enumerate(list_of_contacts):
-        not_me = remove_me(c['name'], list_of_contacts)
+        not_me = remove_me(c["name"], list_of_contacts)
         not_me_or_my_spouse = remove_spouse(c, not_me)
         not_selected = remove_already_selected(not_me_or_my_spouse, selected)
         choose_one = random.choice(not_selected)
 
-        this_secret_santa: SecretSanta = {'name': choose_one['name'],
-                                          'phone': choose_one['phone']}
+        this_secret_santa: SecretSanta = {
+            "name": choose_one["name"],
+            "phone": choose_one["phone"],
+        }
 
-        secret_santas_assigned[i]['secret_santa'] = this_secret_santa
+        secret_santas_assigned[i]["secret_santa"] = this_secret_santa
         selected.append(this_secret_santa)
 
     return secret_santas_assigned
 
 
 def remove_me(me: str, possible_combos: list[dict]):
-    return [s for s in possible_combos if s['name'] != me]
+    return [s for s in possible_combos if s["name"] != me]
 
 
 # remove elements from list_a that are in list_b
@@ -35,4 +43,4 @@ def remove_already_selected(list_to_query: list[dict], selected: list[dict]):
 
 
 def remove_spouse(me: dict, possible_combos: list[dict]):
-    return [s for s in possible_combos if s['name'] != me['spouse']]
+    return [s for s in possible_combos if s["name"] != me["spouse"]]
