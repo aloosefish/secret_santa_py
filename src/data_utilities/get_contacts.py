@@ -3,7 +3,7 @@ import requests
 from src.data_utilities.contact_types import Contact
 
 
-def get_contacts(json_url, api_key) -> list[Contact]:
+def get_contacts(json_url, api_key):
     headers = {"X-Master-Key": api_key}
 
     req = requests.get(json_url, json=None, headers=headers)

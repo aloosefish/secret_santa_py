@@ -27,9 +27,7 @@ client = Client(twilio_account_sid, twilio_auth_token)
 
 def main():
     contacts = get_contacts(json_data_url, json_data_key)
-    print('novelty'+contacts)
     assigned_secret_santas = assign_secret_santa(contacts)
-    print('novelty'+assigned_secret_santas)
     # send_text_messages(contacts=assigned_secret_santas,
     #                    robot_phone_number=twilio_phone_number,
     #                    twilio_client=client)
