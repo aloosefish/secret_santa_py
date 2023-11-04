@@ -11,6 +11,7 @@ python = "^3.8"
 requests = "^2.31.0"
 twilio = "^8.10.0"
 keyring = "^24.2.0"
+sendgrid = "^6.10.0"
 
 [tool.poetry.dev-dependencies]
 pytest = "^7.4.3"

@@ -9,8 +9,7 @@ def assign_secret_santa(list_of_contacts: list[Contact]):
         Contact
     ] = (
         list_of_contacts.copy()
-    )  # issue is here -- AttributeError: 'NoneType' object has no attribute
-    # 'copy'
+    )
     for i, c in enumerate(list_of_contacts):
         not_me = remove_me(c["name"], list_of_contacts)
         not_me_or_my_spouse = remove_spouse(c, not_me)

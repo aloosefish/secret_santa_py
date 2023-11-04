@@ -1,3 +1,11 @@
+## TODO
+Write tests that check that responses to external services come back correct.
+Change to email instead of text message, using Sendgrid.
+* get everyone's email address and update json file
+* save sendgrid API key in GitHub repo secret
+* 
+
+
 ## Secret Santa py
 
 [![codecov](https://codecov.io/github/aloosefish/secret_santa_py/branch/master/graph/badge.svg?token=7G5QUF6DIK)](https://codecov.io/github/aloosefish/secret_santa_py)
@@ -19,6 +27,7 @@ manually.
 
 This project was built with the following tools:
 
+* [Sendgrid](https://www.sendgrid.com/) for sending emails
 * [Twilio](https://www.twilio.com/) for sending text messages.
 * [jsonbin.io](https://jsonbin.io) for simple, private JSON storage and
   retrieval.

@@ -1,31 +1,26 @@
-from twilio.rest import Client
-import keyring
+# this is the same as cloud_run.py except it gets environment variables from
+# local .env file instead of GitHub Secrets
 
+import os
 from src.data_utilities.get_contacts import get_contacts
-from src.data_utilities.assignment_algorithm import \
-    assign_secret_santa
-from src.messages.send_messages import send_text_messages
+from src.data_utilities.assignment_algorithm import assign_secret_santa
+from src.messages.send_emails import send_email_messages
 
-# For running locally. Must run `keyring.set_password` for each of
-# these before running this.
-
-twilio_account_sid = keyring.get_password('system', 'TWILIO_ACCOUNT_SID')
-twilio_auth_token = keyring.get_password('system', 'TWILIO_AUTH_TOKEN')
-twilio_phone_number = keyring.get_password('system',
-                                           'TWILIO_PHONE_NUMBER')
-json_data_url = keyring.get_password('system', 'SECRET_SANTA_JSON_URL')
-json_data_key = keyring.get_password('system', 'SECRET_SANTA_JSON_API_KEY')
-
-client = Client(twilio_account_sid, twilio_auth_token)
+json_data_url = os.environ.get("SECRET_SANTA_JSON_URL")
+json_data_key = os.environ.get("SECRET_SANTA_JSON_API_KEY")
+sendgrid_key = os.environ.get("SENDGRID_TEST")
+sendgrid_robot_email_sender = os.environ.get("SENDGRID_ROBOT_EMAIL")
 
 
 def main():
     contacts = get_contacts(json_data_url, json_data_key)
     assigned_secret_santas = assign_secret_santa(contacts)
-    send_text_messages(contacts=assigned_secret_santas,
-                       robot_phone_number=twilio_phone_number,
-                       twilio_client=client)
+    send_email_messages(
+        sendgrid_key,
+        sendgrid_robot_email_sender,
+        assigned_secret_santas,
+    )
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     main()
