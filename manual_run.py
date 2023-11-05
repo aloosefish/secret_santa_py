@@ -8,7 +8,7 @@ from src.messages.send_emails import send_email_messages
 
 json_data_url = os.environ.get("SECRET_SANTA_JSON_URL")
 json_data_key = os.environ.get("SECRET_SANTA_JSON_API_KEY")
-sendgrid_key = os.environ.get("SENDGRID_TEST")
+sendgrid_key = os.environ.get("SecretSantaAPIKey")
 sendgrid_robot_email_sender = os.environ.get("SENDGRID_ROBOT_EMAIL")
 
 
