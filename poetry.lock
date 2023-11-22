@@ -983,13 +983,13 @@ files = [
 
 [[package]]
 name = "twilio"
-version = "8.10.0"
+version = "8.10.2"
 description = "Twilio API client and TwiML generator"
 optional = false
 python-versions = ">=3.7.0"
 files = [
-    {file = "twilio-8.10.0-py2.py3-none-any.whl", hash = "sha256:1eb04af92f3e70fcc87a2fd30617f53784e34045d054e4ae3dc9cfe7bdf1e692"},
-    {file = "twilio-8.10.0.tar.gz", hash = "sha256:3bf2def228ceaa7519f4d6e58b2e3c9cb5d865af02b4618239e52c9d9e75e29d"},
+    {file = "twilio-8.10.2-py2.py3-none-any.whl", hash = "sha256:40f8bd012f6fb970adfc46d40d39162b46a337be8f1aacec83af8a450363626f"},
+    {file = "twilio-8.10.2.tar.gz", hash = "sha256:083449b27eea4fe66f690da8dada3f533d954a0704a74858ea788cf28be69019"},
 ]
 
 [package.dependencies]
@@ -1131,4 +1131,4 @@ testing = ["big-O", "jaraco.functools", "jaraco.itertools", "more-itertools", "p
 [metadata]
 lock-version = "2.0"
 python-versions = "^3.8"
-content-hash = "283a7a79380c3246fd5a5b4f133f2fdc84fe263d2fc8cd318e21c4b3c7316537"
+content-hash = "2b0161418e89bf89d94cd3efa65834952db3985877d01e1148d1cc86941fdb28"
