@@ -9,7 +9,7 @@ packages = [{ include = "src" }]
 [tool.poetry.dependencies]
 python = "^3.8"
 requests = "^2.31.0"
-twilio = "^8.10.3"
+twilio = "^8.11.1"
 keyring = "^24.3.0"
 sendgrid = "^6.11.0"
 
