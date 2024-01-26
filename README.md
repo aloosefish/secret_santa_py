@@ -1,19 +1,10 @@
-## TODO
-Write tests that check that responses to external services come back correct.
-Change to email instead of text message, using Sendgrid.
-* get everyone's email address and update json file
-* save sendgrid API key in GitHub repo secret
-* 
-
-
 ## Secret Santa py
 
 [![codecov](https://codecov.io/github/aloosefish/secret_santa_py/branch/master/graph/badge.svg?token=7G5QUF6DIK)](https://codecov.io/github/aloosefish/secret_santa_py)
 
 This program assigns every contact a unique Secret Santa.
-It then sends each contact a text message with the name of 
-their Secret Santa (from "Robot Santa"). It can be 
-run automatically on a designated date (using the included [GitHub Action](https://github.com/aloosefish/secret_santa_py/blob/1a5bcac84892bd31f78a09c14d07bac44b233fa3/.github/workflows/create_and_send_on_schedule.yml)) or 
+It then sends each contact an email with the name of their Secret Santa (from "Robot Santa"). 
+It can be run automatically on a designated date using the included [GitHub Action](.github/workflows/create_and_send_on_schedule.yml) or 
 manually.
 
 ### Here are the rules:
@@ -25,21 +16,20 @@ manually.
 
 ### Tech
 
-This project was built with the following tools:
+This project was built using the following tools:
 
 * [Sendgrid](https://www.sendgrid.com/) for sending emails
-* [Twilio](https://www.twilio.com/) for sending text messages.
 * [jsonbin.io](https://jsonbin.io) for simple, private JSON storage and
   retrieval.
 * [faker](https://faker.readthedocs.io/en/master/) for generating test data.
 * [pytest](https://docs.pytest.org/) for writing and running tests.
+* [Poetry](https://python-poetry.org/) for Python environment and dependency management
 * [GitHub Actions](https://docs.github.com/en/actions) for running script on 
   a given date and time
 
 ### Possible Future Enhancements:
 
 * Make more efficient Secret Santa assignment algorithm
-* Make `contact_types.py` dataclasses (or something else)
 
 ### How to run
 
