@@ -1,6 +1,7 @@
 ## TODO
 * Write tests that check that responses to external services come back correct.
 * completely remove any API keys that might have been committed.
+* remove failed GitHub Actions runs from when this script was for sending text messages and failed to due new security requirements from Twilio.
 
 
 ## Secret Santa py
@@ -8,7 +9,7 @@
 [![codecov](https://codecov.io/github/aloosefish/secret_santa_py/branch/master/graph/badge.svg?token=7G5QUF6DIK)](https://codecov.io/github/aloosefish/secret_santa_py)
 
 This program assigns every contact a unique Secret Santa.
-It then sends each contact a text message with the name of 
+It then sends each contact an email with the name of 
 their Secret Santa (from "Robot Santa"). It can be 
 run automatically on a designated date (using the included [GitHub Action](https://github.com/aloosefish/secret_santa_py/blob/1a5bcac84892bd31f78a09c14d07bac44b233fa3/.github/workflows/create_and_send_on_schedule.yml)) or 
 manually.
