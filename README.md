@@ -1,9 +1,6 @@
 ## TODO
-Write tests that check that responses to external services come back correct.
-Change to email instead of text message, using Sendgrid.
-* get everyone's email address and update json file
-* save sendgrid API key in GitHub repo secret
-* 
+* Write tests that check that responses to external services come back correct.
+* completely remove any API keys that might have been committed.
 
 
 ## Secret Santa py
@@ -28,18 +25,12 @@ manually.
 This project was built with the following tools:
 
 * [Sendgrid](https://www.sendgrid.com/) for sending emails
-* [Twilio](https://www.twilio.com/) for sending text messages.
 * [jsonbin.io](https://jsonbin.io) for simple, private JSON storage and
   retrieval.
 * [faker](https://faker.readthedocs.io/en/master/) for generating test data.
 * [pytest](https://docs.pytest.org/) for writing and running tests.
 * [GitHub Actions](https://docs.github.com/en/actions) for running script on 
   a given date and time
-
-### Possible Future Enhancements:
-
-* Make more efficient Secret Santa assignment algorithm
-* Make `contact_types.py` dataclasses (or something else)
 
 ### How to run
 
