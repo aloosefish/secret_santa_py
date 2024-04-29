@@ -15,7 +15,7 @@ sendgrid = "^6.11.0"
 
 [tool.poetry.dev-dependencies]
 pytest = "^8.1.1"
-Faker = "^24.9.0"
+Faker = "^24.14.1"
 coverage = "^7.4.4"
 pytest-cov = "^4.1.0"
 
