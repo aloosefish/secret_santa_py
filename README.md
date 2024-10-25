@@ -27,10 +27,6 @@ This project was built using the following tools:
 * [GitHub Actions](https://docs.github.com/en/actions) for running script on 
   a given date and time
 
-### Possible Future Enhancements:
-
-* Make more efficient Secret Santa assignment algorithm
-
 ### How to run
 
 - `poetry build` to build distributable archives
