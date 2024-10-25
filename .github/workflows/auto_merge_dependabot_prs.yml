@@ -25,4 +25,4 @@ jobs:
               "sha": "${{ github.event.pull_request.head.sha }}",
               "merge_method": "merge"
             }
-        if: github.actor == 'dependabot[bot]' && github.event.pull_request.merged == null && github.event.pull_request.labels[0].name == 'dependencies' && github.event.pull_request.draft == false && github.event.review.state == 'approved'
+        if: github.actor == 'dependabot[bot]' && github.event.pull_request.merged == null && contains(github.event.pull_request.labels.*.name, 'dependencies') && github.event.pull_request.draft == false && github.event.review.state == 'approved'
