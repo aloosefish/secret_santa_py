@@ -2,6 +2,10 @@
 # local .env file instead of GitHub Secrets
 
 import os
+from dotenv import load_dotenv
+
+load_dotenv()
+
 from src.data_utilities.get_contacts import get_contacts
 from src.data_utilities.assignment_algorithm import assign_secret_santa
 from src.messages.send_emails import send_email_messages
