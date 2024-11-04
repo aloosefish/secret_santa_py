@@ -16,7 +16,7 @@ def send_email_messages(
         email_contents = Mail(
             from_email=sendgrid_robot_email_sender,
             to_emails=i["email"],
-            subject='Merry Christmas from Robot Santa',
+            subject="Merry Christmas from Robot Santa",
             plain_text_content=secret_santa_message,
         )
         try:
