@@ -27,15 +27,16 @@ def assign_secret_santa(list_of_contacts: list[Contact]):
 def validate_secret_santa(contacts):
     while True:
         contacts_with_assignments = assign_secret_santa(contacts)
+
         # Extract Secret Santa names
         secret_santa_names = [
             contact["secret_santa"]["name"]
             for contact in contacts_with_assignments
             if "secret_santa" in contact and contact["secret_santa"] is not None
         ]
-        if len(secret_santa_names) != len(contacts_with_assignments):
-            continue
-        else:
+
+        # Check for uniqueness
+        if len(secret_santa_names) == len(set(secret_santa_names)):
             return contacts_with_assignments
 
 
