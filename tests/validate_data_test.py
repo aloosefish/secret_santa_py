@@ -13,12 +13,8 @@ class TestValidateData:
             for spouse in find_spouse_within:
                 if spouse['name'] != spouse_to_find:
                     continue
-                elif spouse['name'] == spouse_to_find:
-                    break
                 else:
-                    # if it gets all the way through find_spouse_within without
-                    # finding spouse, then fail
-                    pytest.fail('Spouses are not reciprocal')
+                    break
 
     def test_make_contacts(self):
         contacts = make_contacts(20)
