@@ -5,14 +5,13 @@ from src.data_utilities.assignment_algorithm import (
     remove_spouse,
     assign_secret_santa,
 )
-from tests.create_test_data import create_test_contact_list
+from test_helpers.create_test_data import create_test_contact_list
 
 
 class TestAssignments:
     @pytest.fixture()
     def setup_test_data(self):
-        contacts_list = create_test_contact_list(10)
-        return contacts_list
+        return create_test_contact_list(10)
 
     def test_remove_me(self, setup_test_data):
         not_me = remove_me(setup_test_data[0]["name"], setup_test_data)

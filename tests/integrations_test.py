@@ -2,7 +2,7 @@ import pytest
 
 from src.data_utilities.assignment_algorithm import assign_secret_santa
 from src.data_utilities.contact_types import Contact
-from tests.create_test_data import create_test_contact_list
+from test_helpers.create_test_data import create_test_contact_list
 
 
 class TestIntegrations:

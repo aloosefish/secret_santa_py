@@ -1,6 +1,6 @@
 import pytest
 
-from create_test_data import make_contacts, match_spouses
+from test_helpers.create_test_data import make_contacts, match_spouses
 
 
 class TestValidateData:
