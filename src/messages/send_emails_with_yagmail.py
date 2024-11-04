@@ -15,7 +15,7 @@ def send_email_messages(
 
         try:
             yag.send(
-                to_emails=i["email"],
+                to=i["email"],
                 subject="Merry Christmas from Robot Santa",
                 contents=secret_santa_message,
             )
