@@ -17,7 +17,7 @@ yagmail = "^0.15.293"
 
 [tool.poetry.dev-dependencies]
 pytest = "^8.1.1"
-Faker = "^26.1.0"
+Faker = "^33.3.0"
 coverage = "^7.4.4"
 pytest-cov = "^5.0.0"
 
