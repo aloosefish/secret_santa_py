@@ -9,6 +9,7 @@ on:
 
 jobs:
   build:
+    name: python
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
@@ -20,8 +21,6 @@ jobs:
 
       - name: Set up Python
         run: uv python install
-        with:
-          python-version-file: "pyproject.toml"
 
       - name: Install the project
         run: uv sync --all-extras --dev
@@ -30,7 +29,7 @@ jobs:
         uses: astral-sh/setup-uv@v5
         with:
           enable-cache: true
-          cache-local-path: "/path/to/cache"
+          cache-local-path: "~/.local/cache"
 
       - name: Run tests
         run: uv run pytest tests --cov src --cov-report=xml
