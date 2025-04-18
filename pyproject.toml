@@ -20,6 +20,7 @@ dev = [
     "Faker>=26.1.0,<27",
     "coverage>=7.4.4,<8",
     "pytest-cov>=5.0.0,<6",
+    "ruff>=0.7.2",
 ]
 
 [tool.hatch.build.targets.sdist]
@@ -33,19 +34,11 @@ requires = ["hatchling"]
 build-backend = "hatchling.build"
 
 [tool.pytest.ini_options]
-pythonpath =[
-    "."
-]
+pythonpath = ["."]
 minversion = "7.0"
-addopts = [
-    "-ra -v"
-]
+addopts = ["-ra -v"]
 
 testpaths = "tests"
 
 [tool.coverage.run]
-omit = [
-  'tests/*',
-  'src/cloud_run.py',
-  'src/manual_run.py'
-]
+omit = ['tests/*', 'src/cloud_run.py', 'src/manual_run.py']

@@ -1,4 +1,3 @@
-import pytest
 
 from test_helpers.create_test_data import make_contacts, match_spouses
 
