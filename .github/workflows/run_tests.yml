@@ -9,35 +9,30 @@ on:
 
 jobs:
   build:
+    name: python
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v3
-      - uses: actions/setup-python@v4
-        with:
-          python-version: '3.11'
+      - uses: actions/checkout@v4
 
-      - name: Cache Poetry Install
-        uses: actions/cache@v3
+      - name: Install uv
+        uses: astral-sh/setup-uv@v5
         with:
-          path: ~/.local
-          key: poetry-1.5.1-0
-      - uses: snok/install-poetry@v1
+          version: "0.6.14"
+
+      - name: Set up Python
+        run: uv python install
+
+      - name: Install the project
+        run: uv sync --all-extras --dev
+
+      - name: Define a custom uv cache path
+        uses: astral-sh/setup-uv@v5
         with:
-          version: 1.5.1
-          virtualenvs-create: true
-          virtualenvs-in-project: true
+          enable-cache: true
+          cache-local-path: "~/.local/cache"
 
-      - name: Cache Dependencies
-        id: cache-deps
-        uses: actions/cache@v3
-        with:
-          path: .venv
-          key: pydeps-${{ hashFiles('**/poetry.lock') }}
-
-      - run: poetry install --no-interaction --no-root
-        if: steps.cache-deps.outputs.cache-hit != 'true'
-
-      - run: poetry run pytest --cov src --cov-report=xml
+      - name: Run tests
+        run: uv run pytest tests --cov src --cov-report=xml
 
       - name: Upload coverage reports to Codecov
         uses: codecov/codecov-action@v3

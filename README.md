@@ -18,20 +18,19 @@ manually.
 
 This project was built using the following tools:
 
-* [Sendgrid](https://www.sendgrid.com/) for sending emails
 * [jsonbin.io](https://jsonbin.io) for simple, private JSON storage and
   retrieval.
 * [faker](https://faker.readthedocs.io/en/master/) for generating test data.
 * [pytest](https://docs.pytest.org/) for writing and running tests.
-* [Poetry](https://python-poetry.org/) for Python environment and dependency management
+* [uv](https://github.com/astral-sh/uv) for Python environment and dependency management
 * [GitHub Actions](https://docs.github.com/en/actions) for running script on 
   a given date and time
 
 ### How to run
 
-- `poetry build` to build distributable archives
-- `poetry run pytest` : Tests that Secret Santa assignment algorithm works 
+- `uv build` to build distributable archives
+- `uv run pytest` : Tests that Secret Santa assignment algorithm works 
   correctly, with fake test data
-- `poetry run python manual_run.py` : runs program manually
-- `poetry run pytest --cov=src --cov-report=html` generate test coverage report
+- `uv run python manual_run.py` : runs program manually
+- `uv run pytest --cov=src --cov-report=html` generate test coverage report
 
