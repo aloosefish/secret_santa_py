@@ -3,7 +3,7 @@ name = "secret_santa_py"
 version = "1.0.0"
 description = "generate secret santa combinations and send via text message"
 authors = [{ name = "Ian Davis" }]
-requires-python = "~=3.8"
+requires-python = ">=3.9"
 readme = "README.md"
 dependencies = [
     "requests>=2.32.3,<3",
