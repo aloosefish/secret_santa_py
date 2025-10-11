@@ -9,7 +9,8 @@ def send_email_messages(
     robot_email_sender: str,
     contacts: list[Contact],
 ):
-    yag = yagmail.SMTP(robot_email_sender, api_key)
+    yagmail.register(robot_email_sender, api_key)
+    yag = yagmail.SMTP(robot_email_sender)
     for i in contacts:
         secret_santa_message = create_secret_santa_message(i)
 
