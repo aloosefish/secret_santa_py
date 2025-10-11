@@ -1,5 +1,3 @@
-# basically this: https://jacobian.org/til/github-actions-poetry/
-
 env:
   CODECOV_TOKEN: ${{ secrets.CODECOV_TOKEN }}
 on:
@@ -18,18 +16,13 @@ jobs:
         uses: astral-sh/setup-uv@v5
         with:
           version: "0.6.14"
+          enable-cache: true
 
       - name: Set up Python
         run: uv python install
 
       - name: Install the project
-        run: uv sync --all-extras --dev
-
-      - name: Define a custom uv cache path
-        uses: astral-sh/setup-uv@v5
-        with:
-          enable-cache: true
-          cache-local-path: "~/.local/cache"
+        run: uv sync --all-groups
 
       - name: Run tests
         run: uv run pytest tests --cov src --cov-report=xml
