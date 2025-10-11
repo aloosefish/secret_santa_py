@@ -1,5 +1,5 @@
 from sys import argv
-from src.messages.send_emails import send_email_messages
+from src.messages.send_emails_with_sendgrid import send_email_messages
 from src.data_utilities.get_contacts import get_contacts
 from src.data_utilities.assignment_algorithm import validate_secret_santa
 
