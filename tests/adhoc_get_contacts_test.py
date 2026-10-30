@@ -34,7 +34,7 @@ class TestGetContactsRealAPI:
         json_url = os.getenv("SECRET_SANTA_JSON_URL")
         api_key = os.getenv("SECRET_SANTA_JSON_API_KEY")
         
-        print(f"\nAttempting to fetch contacts from: {json_url[:30]}...")
+        print("\nAttempting to fetch contacts from: {json_url[:30]}...")
         
         # Act
         contacts = get_contacts(json_url, api_key)

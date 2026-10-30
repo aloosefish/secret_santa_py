@@ -12,8 +12,8 @@ load_dotenv()
 
 json_data_url = os.environ.get("SECRET_SANTA_JSON_URL")
 json_data_key = os.environ.get("SECRET_SANTA_JSON_API_KEY")
-sender_email_address = os.environ.get("ROBOT_SANTA_EMAIL")
-fastmail_app_password = os.environ.get("FASTMAIL_APP_PASSWORD")
+sender_email_address = os.environ["ROBOT_SANTA_EMAIL"]
+fastmail_app_password = os.environ["FASTMAIL_APP_PASSWORD"]
 
 
 def main():
