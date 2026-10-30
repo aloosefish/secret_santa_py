@@ -1,17 +1,14 @@
 [project]
 name = "secret_santa_py"
 version = "1.0.0"
-description = "generate secret santa combinations and send via text message"
+description = "generate secret santa combinations and send via email"
 authors = [{ name = "Ian Davis" }]
 requires-python = ">=3.9"
 readme = "README.md"
 dependencies = [
     "requests>=2.32.3,<3",
-    "twilio>=9.0.5,<10",
     "keyring>=25.3.0,<26",
-    "sendgrid>=6.11.0,<7",
     "python-dotenv>=1.0.1,<2",
-    "yagmail>=0.15.293,<0.16",
 ]
 
 [dependency-groups]
