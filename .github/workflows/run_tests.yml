@@ -7,15 +7,15 @@ on:
 
 jobs:
   build:
-    name: python
+    name: run_test.yml
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v7
 
       - name: Install uv
-        uses: astral-sh/setup-uv@v5
+        uses: astral-sh/setup-uv@68559e99cc807c1eb7e9238fd43a15bba460eec2
         with:
-          version: "0.6.14"
+          version: "0.13.6"
           enable-cache: true
 
       - name: Set up Python
@@ -28,7 +28,6 @@ jobs:
         run: uv run pytest tests --cov src --cov-report=xml
 
       - name: Upload coverage reports to Codecov
-        uses: codecov/codecov-action@v5
+        uses: codecov/codecov-action@v7
         with:
           files: ./coverage.xml
-
