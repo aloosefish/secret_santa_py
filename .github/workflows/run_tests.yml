@@ -7,7 +7,7 @@ on:
 
 jobs:
   build:
-    name: python
+    name: run_test.yml
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v7
@@ -31,4 +31,3 @@ jobs:
         uses: codecov/codecov-action@v7
         with:
           files: ./coverage.xml
-
